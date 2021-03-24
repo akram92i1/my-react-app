@@ -1,0 +1,13 @@
+name: my-react-app
+autocreate: true
+image: 
+  name: okteto.dev/my-react-app:dev
+  context: .
+  dockerfile: Dockerfile
+  target: dev
+command:
+- bash
+sync:
+- .:/usr/src/app
+forward:
+-  8080:8080

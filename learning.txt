@@ -1,0 +1,40 @@
+React lifecycle it's not like life cycle hook 
+-------------------------------------------------------------------
+we got many type of component lifecycle 
+
+1- constructor(props) : we use the constructor for basic initialization work for example for setting an initial state 
+     |--> do a set up State and don't cause sie effect    
+            ||
+            ||
+            ||
+            \/
+2- getDerivedStateFromProps(props,state)
+     |--> Do sync State and don't cause side effect 
+            ||
+            ||
+            ||
+            \/
+3- render() : this methode returns JSX , we should use it only to prepare data and layout your JSX and to render HTML code in our web page 
+            ||
+            ||
+            ||
+            \/
+4- Render Child components  
+            ||
+            ||
+            ||
+            \/
+5- componentDidMount : we use this a lot when we work with a class based component because here we can cause side effect, this is a hook that u can use for making http request like getting data data from the web  
+        |-> don't call setState before we have to do a  catch after calling for exemple an HTTP request 
+        because it's will trigger a re render cycle and that is bad for performance 
+
+
+and there is also a hooks that can be used but it will be removed in the future it's not insecure or thing like hat this component is 
+____________________________________________________________________________________________________________
+Update hook 
+-----------
+
+shouldComponentUpdate(nextProps , nextState ) : use this carefully because we can break compnents if you block an update from hapening but it important
+because it prevent unnecessary update to hapen after that a render() method is called after this it's come update child component and props  
+
+we also have componentDidUpdate after a sure update but be axare to just evitate loop
